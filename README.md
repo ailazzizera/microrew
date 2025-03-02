@@ -1,4 +1,4 @@
-# Bot per fare ricerche per Microsoft Reward
+# Bot per fare ricerche su Microsoft Reward
 Il bot utilizza il modulo *pyautogui* per muovere il mouse e cliccare a determinate coordinate. Queste devono essere configurate rispetto a:
 1. Dove si trova l'icona di *Microsoft Edge*;
 2. Le altre in corrispondenza della barra degli indirizzi del browser.

@@ -44,7 +44,7 @@ for i in range(40):
     r = random.randint(1, 8)
     print(f"Attesa di {r} secondi")
     time.sleep(r)
-pyautogui.write('rew')
+pyautogui.write('https://rewards.bing.com/', interval=0.21)
 pyautogui.press('enter')
 ultimo=time.time()
 result= (ultimo-primo)

@@ -1,10 +1,14 @@
+#importa le librerie necessarie
 import pyautogui
 import random
 import time
 import requests
 import math
+
+# registra il tempo di inizio
 primo = time.time()
 
+# ottiene la dimensione dello schermo
 w = pyautogui.size()
 
 # URL di una lista di parole italiane (ad esempio, da un repository GitHub)
@@ -23,18 +27,21 @@ tutte_le_parole = response.text.splitlines()
 parole_uniche = list(set(tutte_le_parole))  # Rimuove duplicati
 parole_selezionate = random.sample(parole_uniche, 100)  # Seleziona 100 parole casuali
 
+# definisce una funzione per cliccare e scrivere una parola
 def clicca_e_scrivere(x, y, parola):
     pyautogui.moveTo(x, y)
     pyautogui.click(button = "left")
     for lettera in parola:
         pyautogui.write(lettera, interval=0.2)
 
+# muove il cursore e clicca in una posizione specifica
 pyautogui.moveTo(1000,1050)
 pyautogui.click(button ='left')
 pyautogui.moveTo(500,60)
 x, y = 500, 60  #modifica le coordinate x e y per posizionare il cursore dove vuoi
 time.sleep(2)
 
+# ciclo per scrivere parole casuali
 for i in range(40):
     parola_casuale = random.choice(parole_selezionate)
     pyautogui.press('backspace')
@@ -47,11 +54,11 @@ for i in range(40):
     print(f"Attesa di {r} secondi")
     time.sleep(r)
 
-pyautogui.write('https://rewards.bing.com/', interval=0.21)
-pyautogui.press('enter')
+# registra il tempo di fine e calcola il tempo di esecuzione
 ultimo=time.time()
 result= (ultimo-primo)
 
+# tronca il risultato e lo stampa
 result=math.trunc(result)
 print('Exec:' + str(result) + ' sec')
 

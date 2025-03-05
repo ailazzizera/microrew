@@ -41,9 +41,12 @@ for i in range(40):
     clicca_e_scrivere(x, y, parola_casuale)
     pyautogui.press('enter')
     print(f"Scritto: {parola_casuale}")
+    parole_selezionate.remove(parola_casuale)  # Rimuove la parola selezionata dal dataset
+    print(f"Parole rimanenti: {len(parole_selezionate)}")  # Stampa il numero di parole rimanenti
     r = random.randint(1, 8)
     print(f"Attesa di {r} secondi")
     time.sleep(r)
+
 pyautogui.write('https://rewards.bing.com/', interval=0.21)
 pyautogui.press('enter')
 ultimo=time.time()

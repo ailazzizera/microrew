@@ -32,12 +32,14 @@ def clicca_e_scrivere(x, y, parola):
     pyautogui.moveTo(x, y)
     pyautogui.click(button = "left")
     for lettera in parola:
-        pyautogui.write(lettera, interval=0.2)
+        interval = random.uniform(0.09, 0.5)
+        pyautogui.write(lettera, interval=interval)
 
 # muove il cursore e clicca in una posizione specifica
-pyautogui.moveTo(1000,1050)
+durata = random.uniform(0.4, 0.5)  # Durata casuale
+pyautogui.moveTo(1000,1050, duration=durata)
 pyautogui.click(button ='left')
-pyautogui.moveTo(500,60)
+pyautogui.moveTo(500,55, duration=0.7)
 x, y = 500, 60  #modifica le coordinate x e y per posizionare il cursore dove vuoi
 time.sleep(2)
 
@@ -50,9 +52,9 @@ for i in range(40):
     print(f"Scritto: {parola_casuale}")
     parole_selezionate.remove(parola_casuale)  # Rimuove la parola selezionata dal dataset
     print(f"Parole rimanenti: {len(parole_selezionate)}")  # Stampa il numero di parole rimanenti
-    r = random.randint(1, 8)
+    r = random.randint(1, 8) # Genera un numero casuale tra 1 e 8
     print(f"Attesa di {r} secondi")
-    time.sleep(r)
+    time.sleep(r) # Pausa casuale (accetta solo interi)
 
 # registra il tempo di fine e calcola il tempo di esecuzione
 ultimo=time.time()

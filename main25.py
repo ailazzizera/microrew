@@ -12,7 +12,8 @@ primo = time.time()
 w = pyautogui.size()
 
 # URL di una lista di parole italiane (ad esempio, da un repository GitHub)
-url = "https://raw.githubusercontent.com/napolux/paroleitaliane/refs/heads/master/paroleitaliane/280000_parole_italiane.txt"
+url = "https://raw.githubusercontent.com/napolux/paroleitaliane/main/paroleitaliane/110000_parole_italiane_con_nomi_propri.txt"  # Valid URL for Italian words
+
 
 # Scarica la lista di parole
 response = requests.get(url)

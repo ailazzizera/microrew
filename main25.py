@@ -4,6 +4,7 @@ import random
 import time
 import requests
 import math
+import winsound
 
 # registra il tempo di inizio
 primo = time.time()
@@ -57,9 +58,12 @@ for i in range(40):
     print(f"Attesa di {r} secondi")
     time.sleep(r) # Pausa casuale (accetta solo interi)
 
-# registra il tempo di fine e calcola il tempo di esecuzione
+# registra il tempo di fine e calcola il tempo di esecuzione')
 ultimo=time.time()
 result= (ultimo-primo)
+for i in range (3):
+    winsound.Beep(400,100)  # Beep at 440 Hz for 1 second
+winsound.Beep(400,450)
 
 # tronca il risultato e lo stampa
 result=math.trunc(result)
